@@ -1,5 +1,5 @@
-import Player from "./player";
-import ComputerPlayer from "./computerPlayer";
+import Player from "./player.js";
+import ComputerPlayer from "./computerPlayer.js";
 
 class Match {
     setup(playerName) {

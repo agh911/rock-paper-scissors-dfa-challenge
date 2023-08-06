@@ -9,11 +9,11 @@
 <body>
     <h1>Hi, <%= playerName %>!</h1>
 
-    <form action="/turn" method="post">
+    <form action="/outcome" method="post">
         <p>Choose your option:</p>
-        <label><input type="radio" name="move" value="rock">Rock</label>
-        <label><input type="radio" name="move" value="paper">Paper</label>
-        <label><input type="radio" name="move" value="scissors">Scissors</label>
+        <label><input type="radio" name="option" value="rock">Rock</label>
+        <label><input type="radio" name="option" value="paper">Paper</label>
+        <label><input type="radio" name="option" value="scissors">Scissors</label>
         <br>
         <input id="match-button" type="submit" value="Match">
     </form>

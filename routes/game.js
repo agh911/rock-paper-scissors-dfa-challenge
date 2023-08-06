@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
     res.redirect('/game');
 })
 
-router.get('/game', (req, res) => {
+router.get('/', (req, res) => {
     const player = req.app.locals.match.player;
 
     res.render('game', {

@@ -4,15 +4,28 @@
 <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors Game</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,500&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
-    <h1>Welcome to the Rock Paper Scissors Game!</h1>
-    <p>Enter your name below and get ready to play!</p>
-    <form action="/game" method="post">
-        <input id="player-name-textbox" type="text" name="playerName" placeholder="Your name" required><br />
-        <input id="name-submit" type="submit" value="Start Game">
-    </form>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h1 class="mb-5">Welcome to the Rock Paper Scissors Game!</h1>
+        <p>Enter your name below and get ready to play!</p>
+        <form class="d-flex flex-column align-items-center align-content-evenly" action="/game" method="post">
+            <input id="player-name-textbox" type="text" name="playerName" placeholder="Your name" required><br />
+            <input id="name-submit" type="submit" value="Start">
+        </form>
+    </div>
 </body>
 
 </html>

@@ -17,9 +17,11 @@ class Match {
 
     getRoundWinner(playerOption, computerOption) {
         const winningCombinations = {
-            rock: 'scissors',
-            paper: 'rock',
-            scissors: 'paper'
+            rock: ['scissors', 'lizard'],
+            paper: ['rock', 'Spock'],
+            scissors: ['paper', 'lizard'],
+            lizard: ['paper', 'Spock'],
+            Spock: ['rock', 'scissors']
         }
 
         if (playerOption === computerOption) {
@@ -27,7 +29,7 @@ class Match {
             return "It's a tie!";
         }
 
-        if (winningCombinations[playerOption] === computerOption) {
+        if (winningCombinations[playerOption].includes(computerOption)) {
             this.playerWins++;
             return "You win!";
         }

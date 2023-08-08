@@ -6,6 +6,7 @@ class Match {
         this.roundsPlayed = 0;
         this.playerWins = 0;
         this.computerWins = 0;
+        this.ties = 0;
     }
 
     setup(playerName) {
@@ -22,6 +23,7 @@ class Match {
         }
 
         if (playerOption === computerOption) {
+            this.ties++
             return "It's a tie!";
         }
 
@@ -43,13 +45,24 @@ class Match {
             return "Computer wins the match!";
         }
 
-        return "It's a tie!";
+        // Had a case of two round ties and one round player win which resulted in the player being the match winner
+        if (this.ties > this.playerWins && this.ties > this.computerWins) {
+            return "It's a tie!";
+        }
+
+        // Had a case of one round player win, one round computer win and one round tie
+        if (this.playerWins === this.computerWins && this.playerWins === 1 && this.ties === 1) {
+            return "Match result is still undecided.";
+        }
+
+        return "No clear match result.";
     }
 
     reset() {
         this.roundsPlayed = 0;
         this.playerWins = 0;
         this.computerWins = 0;
+        this.ties = 0;
     }
 }
 

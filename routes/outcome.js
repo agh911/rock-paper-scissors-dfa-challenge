@@ -5,23 +5,26 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const match = req.app.locals.match;
     const playerOption = req.body.option;
+    let computerOption = match.computer.chooseOption();
 
-    const result = match.playRound(playerOption);
+    const result = match.getRoundWinner(playerOption, computerOption);
     match.roundsPlayed++;
 
     let matchResult = result;
 
     if (match.roundsPlayed === 3) {
         matchResult = match.getMatchWinner();
+        match.reset();
         res.render('matchResult', {
             result: matchResult
         })
-        match.reset();
+        return;
     }
+
     res.render('outcome', {
         playerOption: playerOption,
-        computerOption: match.computer.chooseOption(),
-        result: matchResult,
+        computerOption: computerOption,
+        result: result,
     })
 })
 

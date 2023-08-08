@@ -13,9 +13,8 @@ class Match {
         this.computer = new ComputerPlayer();
     }
 
-    playRound(playerOption) {
-        const computerOption = this.computer.chooseOption();
 
+    getRoundWinner(playerOption, computerOption) {
         const winningCombinations = {
             rock: 'scissors',
             paper: 'rock',
@@ -28,23 +27,23 @@ class Match {
 
         if (winningCombinations[playerOption] === computerOption) {
             this.playerWins++;
-            return "You win this round!";
+            return "You win!";
         }
 
         this.computerWins++;
-        return "Computer wins this round!";
+        return "Computer wins!"
     }
 
     getMatchWinner() {
-        if (this.playerWins === this.computerWins) {
-            return "It's a tie!";
-        }
-
         if (this.playerWins > this.computerWins) {
             return `Congratulations, ${this.player.name} wins the match!`;
         }
 
-        return "Computer wins the match!";
+        if (this.playerWins < this.computerWins) {
+            return "Computer wins the match!";
+        }
+
+        return "It's a tie!";
     }
 
     reset() {

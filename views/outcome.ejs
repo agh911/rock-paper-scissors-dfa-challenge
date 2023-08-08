@@ -31,7 +31,9 @@
             <img src="/<%= computerOption %>.png" alt="<%= playerOption %>" class="chosen-option-image flip-image">
         </div>
     </div>
-    <a id="match-link" href="/game">Next turn</a>
+    <a id="match-link" href="<%= showMatchResultLink ? '/matchResult' : '/game' %>">
+        <%= showMatchResultLink ? 'Match Result' : 'Next turn' %>
+    </a>
 </body>
 
 </html>

@@ -11,20 +11,19 @@ router.post('/', (req, res) => {
     match.roundsPlayed++;
 
     let matchResult = result;
+    let showMatchResultLink = false;
 
     if (match.roundsPlayed === 3) {
-        matchResult = match.getMatchWinner();
-        match.reset();
-        res.render('matchResult', {
-            result: matchResult
-        })
-        return;
+        showMatchResultLink = true;
     }
 
     res.render('outcome', {
         playerOption: playerOption,
         computerOption: computerOption,
         result: result,
+        roundsPlayed: match.roundsPlayed,
+        showMatchResultLink: showMatchResultLink,
+        matchResult: matchResult
     })
 })
 

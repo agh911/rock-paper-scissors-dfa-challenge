@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Round Outcome</title>
+    <title>Match Outcome</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,17 +21,7 @@
     <h1 class="pb-5">
         <%= result %>
     </h1>
-    <div class="vw-100 d-flex justify-content-evenly my-5">
-        <div class="d-flex flex-column align-items-center">
-            <h6 class="mb-4">You chose</h6>
-            <img class="chosen-option-image" src="/<%= playerOption %>.png" alt="<%= playerOption %>">
-        </div>
-        <div class="d-flex flex-column align-items-center">
-            <h6 class="mb-4">Computer chose</h6>
-            <img src="/<%= computerOption %>.png" alt="<%= playerOption %>" class="chosen-option-image flip-image">
-        </div>
-    </div>
-    <a id="match-link" href="/game">Next turn</a>
+    <a id="play-again-link" href="/game">Play Again</a>
 </body>
 
 </html>

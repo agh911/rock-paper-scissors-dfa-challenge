@@ -59,7 +59,8 @@ input:focus {
 }
 
 input[type="submit"],
-#match-link {
+#match-link,
+#play-again-link {
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -74,7 +75,8 @@ input[type="submit"],
     color: #fffffe;
 }
 
-#match-link {
+#match-link,
+#play-again-link {
     text-decoration: none;
 }
 

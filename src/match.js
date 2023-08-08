@@ -47,8 +47,7 @@ class Match {
             return "Computer wins the match!";
         }
 
-        // Had a case of two round ties and one round player win which resulted in the player being the match winner
-        if (this.ties > this.playerWins && this.ties > this.computerWins) {
+        if (this.ties === 3) {
             return "It's a tie!";
         }
 

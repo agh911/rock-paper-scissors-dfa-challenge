@@ -15,4 +15,12 @@ describe('Game Route', () => {
             .send({ playerName: 'Player' });
         expect(res).to.have.status(200);
     })
+
+    it('should render the game page with the player name', async () => {
+        const res = await testServer
+            .get('/game');
+        expect(res).to.have.status(200);
+        expect(res).to.be.html;
+        expect(res.text).to.include('Time to make your choice, Player!');
+    })
 })

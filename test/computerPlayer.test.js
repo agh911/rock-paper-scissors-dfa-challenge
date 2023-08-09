@@ -8,6 +8,6 @@ describe('ComputerPlayer', () => {
         const computerPlayer = new ComputerPlayer();
         const chosenOption = computerPlayer.chooseOption();
 
-        expect(chosenOption).to.be.oneOf(['rock', 'paper', 'scissors']);
+        expect(chosenOption).to.be.oneOf(['rock', 'paper', 'scissors', 'lizard', 'Spock']);
     })
 })

@@ -23,4 +23,47 @@ describe('Match Logic', () => {
             expect(match.computer).to.be.an.instanceof(ComputerPlayer);
         })
     })
+
+    describe('getRoundWinner', () => {
+        it('should correctly handle a tie scenario', () => {
+            const result = match.getRoundWinner('rock', 'rock');
+            expect(result).to.equal("It's a tie!");
+        })
+
+        it('should correctly identify player wins', () => {
+            const playerWins = [
+                { player: 'rock', computer: 'scissors' },
+                { player: 'paper', computer: 'rock' },
+                { player: 'scissors', computer: 'paper' },
+                { player: 'lizard', computer: 'Spock' },
+                { player: 'Spock', computer: 'rock' }
+            ]
+
+            playerWins.forEach(scenario => {
+                const { player, computer } = scenario;
+                it(`should correctly identify ${player} wins`, () => {
+                    const result = match.getRoundWinner(player, computer);
+                    expect(result).to.equal("You win!");
+                })
+            })
+        })
+
+        it('should correctly identify computer wins', () => {
+            const computerWins = [
+                { player: 'rock', computer: 'paper' },
+                { player: 'paper', computer: 'scissors' },
+                { player: 'scissors', computer: 'rock' },
+                { player: 'lizard', computer: 'paper' },
+                { player: 'Spock', computer: 'lizard' }
+            ]
+
+            computerWins.forEach(scenario => {
+                const { player, computer } = scenario;
+                it(`should correctly identify ${computer} wins`, () => {
+                    const result = match.getRoundWinner(player, computer);
+                    expect(result).to.equal("Computer wins!");
+                })
+            })
+        })
+    })
 })

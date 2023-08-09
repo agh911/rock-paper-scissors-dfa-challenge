@@ -1,5 +1,7 @@
 import express from 'express';
+
 const app = express();
+
 const host = "http://localhost:";
 const port = 3000;
 

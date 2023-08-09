@@ -21,3 +21,5 @@ app.use('/matchResult', matchResultRouter);
 app.listen(port, () => {
     console.log(`App listening at ${host}${port}`);
 })
+
+export default app;

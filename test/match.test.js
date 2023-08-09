@@ -66,4 +66,37 @@ describe('Match Logic', () => {
             })
         })
     })
+
+    describe('getMatchWinner', () => {
+        it('should correctly determine the match winner for different scenarios', () => {
+            match.setup(playerName);
+            // Test player win
+            match.playerWins = 2;
+            match.computerWins = 1;
+            expect(match.getMatchWinner()).to.equal('Congratulations, Player wins the match!');
+
+            // Test computer win
+            match.playerWins = 1;
+            match.computerWins = 2;
+            expect(match.getMatchWinner()).to.equal('Computer wins the match!');
+
+            // Test tie scenario
+            match.playerWins = 0;
+            match.computerWins = 0;
+            match.ties = 3;
+            expect(match.getMatchWinner()).to.equal("It's a tie!");
+
+            // Test undecided scenario
+            match.playerWins = 1;
+            match.computerWins = 1;
+            match.ties = 1;
+            expect(match.getMatchWinner()).to.equal('Match result is still undecided.');
+
+            // Test no clear match result
+            match.playerWins = 0;
+            match.computerWins = 0;
+            match.ties = 0;
+            expect(match.getMatchWinner()).to.equal('No clear match result.');
+        })
+    })
 })

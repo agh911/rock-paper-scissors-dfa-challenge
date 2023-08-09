@@ -99,4 +99,20 @@ describe('Match Logic', () => {
             expect(match.getMatchWinner()).to.equal('No clear match result.');
         })
     })
+
+    describe('reset', () => {
+        it('should reset match state to initial values', () => {
+            match.roundsPlayed = 2;
+            match.playerWins = 1;
+            match.computerWins = 1;
+            match.ties = 1;
+
+            match.reset();
+
+            expect(match.roundsPlayed).to.equal(0);
+            expect(match.playerWins).to.equal(0);
+            expect(match.computerWins).to.equal(0);
+            expect(match.ties).to.equal(0);
+        })
+    })
 })

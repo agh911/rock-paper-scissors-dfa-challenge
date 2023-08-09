@@ -65,6 +65,12 @@ A game of Rock Paper Scissors, but with an added twist. Choose from five distinc
 1. Test that it start a new match and redirects to the game page.
 2. Test that the game page is rendered with the player name.
 
+### Outcome Route:
+1. Tets if the outcome page is rendered with correct data.
+
+### Match Result Route:
+1. Test if the match result page is rendered.
+
 ### Match Class:
 1. Test that it creates a new match with a player and a computer.
 2. Test that it correctly identifies round player wins.

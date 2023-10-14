@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Play Rock Paper Scissors</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,500&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="container vh-100 d-flex flex-column align-items-center justify-content-center">
+    <div class="text-center">
+        <h1 class="pb-5">Time to make your choice, <%= playerName %>!</h1>
+        <form class="my-5" action="/outcome" method="post">
+            <input type="radio" name="option" value="rock" required><img class="option-image mx-5" src="/rock.png"
+                alt="rock">
+            <input type="radio" name="option" value="paper" required><img class="option-image mx-5" src="/paper.png"
+                alt="paper">
+            <input type="radio" name="option" value="scissors" required><img class="option-image mx-5"
+                src="/scissors.png" alt="scissors">
+            <input type="radio" name="option" value="lizard" required><img class="option-image mx-5" src="/lizard.png"
+                alt="lizard">
+            <input type="radio" name="option" value="Spock" required><img class="option-image ms-5" src="/Spock.png"
+                alt="Spock">
+            <br>
+            <input id="match-button" class="mt-5" type="submit" value="Match">
+        </form>
+    </div>
+</body>
+
+</html>
